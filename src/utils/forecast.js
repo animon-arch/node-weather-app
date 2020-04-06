@@ -17,10 +17,11 @@ const getForecast = (latitude, longitude, callback) => {
       let { precipProbability, temperature } = data.currently;
 
       let daliyData = data.daily.data;
-      let summary = daliyData[0].summary;
+      let { summary, temperatureHigh, temperatureLow } = daliyData[0];
 
       callback(undefined,
-        `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`);
+        `${summary} It is currently ${temperature} degrees out. The maximum temperature will be ${temperatureHigh} degrees 
+        and minimum temperature will be ${temperatureLow} degrees, with a ${precipProbability}% chance of rain.`);
     })
     .catch((err) => {
       if (err.response) callback('Unable to find location. Please enter correct coordiantes.', undefined);
