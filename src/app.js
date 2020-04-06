@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // console.log(__dirname); // points to the directory where the file is called from.
 // console.log(__filename); // points to the file being currently served.
@@ -122,6 +123,6 @@ app.use((req, res, next) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log('Server is up at port 3000.');
+app.listen(port, () => {
+  console.log('Server is up at port ' + port + '.');
 });
