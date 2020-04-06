@@ -1,5 +1,3 @@
-console.log('Client Side JS.');
-
 let serachURL = 'http://localhost:3000/weather?location=';
 const searchBox = document.querySelector("input[type='text");
 const weatherForm = document.querySelector('form');
